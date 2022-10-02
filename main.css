@@ -1,0 +1,86 @@
+body {
+    font-family: 'Bungee Spice', cursive;    ;
+    background-color: skyblue;
+    font-size: 50px;
+}
+
+.bg {
+    position: relative;
+}
+.bg-container {
+    position: fixed;
+    width: 100%; 
+    height: 100%; 
+    left: 0px; 
+    top: 0px; 
+    z-index: -1;
+}
+.supermario-bg {
+    width: 100%;
+    height: 100%;
+}
+.text-container{
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+.mariotxt{
+    position: fixed;
+    opacity: 0;
+    display: flex;
+    left: 0;
+    top: 0;
+}
+.mariotxt:hover{
+    opacity: 1;
+    display: flex;
+    position: absolute;
+}
+
+.characters-containers {
+    position: fixed;
+    border: 20px solid transparent;
+    margin: 0%;
+    top: 71%;
+    left: 0%;
+}
+.mariorunning {
+    position: absolute;
+    width: 100px;
+    height: auto;
+    animation-name: running;
+    animation-duration: 8s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite; 
+    animation-fill-mode: both;
+}
+
+.luigirunning {
+    position: absolute;
+    width: 100px;
+    height: auto;
+    animation-name: running;
+    animation-duration: 8s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; 
+    animation-fill-mode: forwards;
+    animation-direction: alternate-reverse;
+
+}
+
+.mario-dance {
+    position: relative;
+    opacity: 0  ;
+}
+
+.mario-dance:hover {
+    opacity: 1;
+    transform: matrix(0,5);
+}
+/* Keyframes
+*/
+
+@keyframes running {
+    from{transform: translateX(-200px)}
+    to {transform: translateX(2000px)};
+}
