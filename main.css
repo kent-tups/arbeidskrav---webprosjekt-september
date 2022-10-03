@@ -3,7 +3,6 @@ body {
     background-color: skyblue;
     font-size: 50px;
 }
-
 .bg {
     position: relative;
 }
@@ -26,17 +25,18 @@ body {
 }
 .mariotxt{
     position: fixed;
-    opacity: 0;
     display: flex;
     left: 0;
     top: 0;
+    opacity: 0;
 }
 .mariotxt:hover{
-    opacity: 1;
     display: flex;
     position: absolute;
+    animation-name: fadein;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
 }
-
 .characters-containers {
     position: fixed;
     border: 20px solid transparent;
@@ -77,10 +77,23 @@ body {
     opacity: 1;
     transform: matrix(0,5);
 }
-/* Keyframes
-*/
 
+
+/* --------------Keyframes ----------- */
 @keyframes running {
-    from{transform: translateX(-200px)}
-    to {transform: translateX(2000px)};
+    from{transform: 
+        translateX(-200px)
+    }
+    to {
+        transform: translateX(2000px)
+    };
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;;
+    }
 }
