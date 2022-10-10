@@ -1,0 +1,175 @@
+body {
+  font-family: "Bungee Spice", cursive;
+  background-color: skyblue;
+  font-size: 40px;
+  min-height: 100vh;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+/* start of. giph */
+.giph {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background-position: center;
+  text-align: center;
+  justify-content: center;
+}
+#evil {
+  background-color: skyblue;
+  padding: 10px 24px;
+  text-decoration: none;
+  font-size: 25px;
+  border-radius: 10px;
+  width: 100px;
+  height: auto;
+}
+#evil a:hover {
+  transform: scale(-100%);
+  transition: .5s ease-in-out;
+}
+/* end of. giph*/
+/* start of .bg-container */
+.bg-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+}
+/* end of .bg-container */
+
+/* start of supermario-bg */
+#supermario-bg {
+  width: 100%;
+  height: 100%;
+}
+/* end of supermario-bg */
+
+/* start of .mariotxt-container */
+.mariotxt-container {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+}
+/* end of .mariotxt-container */
+
+#mario {
+  display: flex;
+  position: fixed;
+  width: 100px;
+  height: auto;
+  opacity: 1;
+  top: 0;
+  left: 0;
+}
+/* start of .mariotxt */
+.mariotxt {
+  position: relative;
+  content: attr(data-hover1);
+  visibility: hidden;
+  opacity: 0;
+  transition: .5s ease;
+  z-index: 1;
+  top: 500%;
+}
+.mariotxt:hover{
+  opacity: 1;
+  visibility: visible;
+}
+/* end of .mariotxt */
+
+/* start of peachtxt */
+.peachtxt-container {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  top: 0;
+  left: 0;
+}
+/* start of. peach-running*/
+#peach {
+  position: absolute;
+  width: 100px;
+  height: auto;
+  opacity: 1;
+  left: 0;
+  top: 100%;
+  animation-name:peach-running;
+  animation-duration: 12s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+/* end of. peach-running*/
+
+.characters-containers {
+  position: fixed;
+  border: 20px solid transparent;
+  margin: 0%;
+  top: 75%;
+  left: 0%;
+}
+/* end of peach txt */
+
+/* start of #mariorunning */
+#mariorunning {
+  position: absolute;
+  width: 100px;
+  height: auto;
+  animation-name: running;
+  animation-duration: 12s;
+  animation-delay: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+/* end of #mariorunning */
+
+/* start of #luigirunning */
+#luigirunning {
+  position: absolute;
+  width: 100px;
+  height: auto;
+  animation-name: running;
+  animation-duration: 12s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-direction: alternate-reverse;
+}
+/* end of #luigirunning */
+
+
+
+/* --------------Keyframes ----------- */
+@keyframes running {
+  from {
+    transform: translateX(-200px);
+  }
+  to {
+    transform: translateX(2000px);
+  }
+}
+
+@keyframes peach-running{
+  from{
+    transform: translateX(-900px);
+  }
+  to{
+    transform: translateX(2000px);
+  }
+}
+/* --------------Keyframes ----------- */
