@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies 2022</title>
+    <!--
+        Legge til film, deretter kunne klikke på filmen for å få mer info om den.
+        - onclick
+        - function
+        - template literal 
+        - this
+    -->
+</head>
+<body>
+    
+    <input id="show-movie-1-btn" type="button" value="Vis Batman">
+    <input id="show-movie-2-btn" type="button" value="Vis 4D Man">
+
+    <div id="output-div"></div>
+    <div id="info-div"></div>
+
+    <script>        
+
+        var showMovie1Btn = document.getElementById("show-movie-1-btn")
+        var showMovie2Btn = document.getElementById("show-movie-2-btn")
+
+        var outputDiv = document.getElementById("output-div")
+        var infoDiv = document.getElementById("info-div")
+
+        function showMovie(){
+            if( this.id === "show-movie-1-btn"){
+                outputDiv.innerHTML = `<img src="images/batman.jpg">`
+            } else if( this.id === "show-movie-2-btn" ){
+                outputDiv.innerHTML = `<img src="images/four-d-man.jpg">`
+            }
+        }
+
+        showMovie1Btn.onclick = showMovie;
+        showMovie2Btn.onclick = showMovie;
+    </script>
+
+</body>
+</html>
