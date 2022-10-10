@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LilleBySkaper22</title>
+</head>
+<body>
+    
+    <h3>Bygg din egen by</h3>
+    
+    <!-- knappenes id'er har fått samme struktur som funksjonene de kaller på, me btn-postfix -->
+    <button id="add-building-2-btn"><img src="images/building-2.png">5000</button>
+    <button id="add-building-3-btn"><img src="images/building-3.png">20000</button>
+    <button id="add-warrior-1-btn"><img src="images/warrior-1.jpg">1000</button>
+
+    <div id="currency-output"></div>
+    <div id="city-output"></div>
+
+    <script>
+        /*
+            ***
+            HTML objects
+            ***
+        */
+       var addBuilding2Btn = document.getElementById("add-building-2-btn");
+       var addBuilding3Btn = document.getElementById("add-building-3-btn");
+       var addWarrior1Btn = document.getElementById("add-warrior-1-btn");
+
+       var currencyOutput = document.getElementById("currency-output");
+       var cityOutput = document.getElementById("city-output");
+
+        /*
+            ***
+            Variables
+            ***
+        */
+        var currency = 75000;
+        var building2Price = 5000;
+        var building3Price = 20000;
+
+       /*
+            ***
+            Functions
+            ***
+
+            malen for en funksjon:
+
+            function valgfrittNavn(){
+                // Funksjonskroppen: det som skal skje når funksjonen blir kalt
+            }
+
+       */
+        function addBuilding2(){
+            if( currency >= building2Price ){
+                currency = currency - building2Price; // Alternativ (forkortet) måte å skrive dette på: currency -= building2Price;
+                cityOutput.innerHTML += `<img src="images/building-2.png">`; // += betyr legg til, mens = betyr erstatt i denne konteksten
+                showCurrency(); // Grensesnittet må oppdateres med ny currency, derfor kaller man på showCurrency-funksjonen på nytt
+            }else{
+                alert("Beklager, ikke nok currency! Drep en sopp!");
+            }           
+        }
+
+        function addBuilding3(){
+            if( currency >= building3Price ){
+                currency = currency - building3Price;
+                cityOutput.innerHTML += `<img src="images/building-3.png">`; 
+                showCurrency();
+            }else{
+                alert("Beklager, ikke nok currency! På tide å selge noe?")
+            }
+        }
+
+        function addWarrior1(){
+            cityOutput.innerHTML += `<img src="images/warrior-1.jpg">`;  
+        }
+
+        function showCurrency(){
+            currencyOutput.innerHTML = `<p>Du har ${currency} currency i din pung!</p>`; // embedded expression
+        }
+
+        /*
+            ***
+            Events
+            ***
+        */
+        showCurrency(); // kaller på showCurrency når siden laster
+        addBuilding2Btn.onclick = addBuilding2; // Knytter event (hendelse), her click, til knappene våre slik at funksjon blir kalt på når knapp blir klikket på
+        addBuilding3Btn.onclick = addBuilding3;
+        addWarrior1Btn.onclick = addWarrior1;
+
+    </script>
+
+</body>
+</html>
